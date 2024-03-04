@@ -250,7 +250,7 @@ private static void generatePollutantwisePollutionReport(Map<String, List<Pollut
 ```
 Вложенные циклы увеличивают ЦС метода. Так же нельзя не обратить внимание на дублирование кода во вложенном for (table.addCell(...)). Если приглядеться, то можно увидеть, что в методе смешаны бизнес-задача - сгенерировать отчет и детали создания этого отчета. То есть нарушен SRP.
 
-Во - первых, нужно избавиться от нарушения SRP и вынести все детали создания отчета в отдельный класс DocumentCreator с методами addTitle(String title), addHeader(String header), addTable(String title, List<String> headers, List<String> entries), addTableCell(PdfPTable table, String header).
+Во - первых, нужно избавиться от нарушения SRP и вынести все детали создания отчета в отдельный класс DocumentCreator с методами addTitle(String title), addHeader(String header), addTable(String title, List<String> headers, List<String> entries), addTableCell(PdfPTable table, String header). Для компактности опущу код класса.
 Тогда исходный метод нужно разделить на 2
 
 ### Итоговый код 3
